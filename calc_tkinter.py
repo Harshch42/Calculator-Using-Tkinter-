@@ -1,5 +1,7 @@
+import tkinter as tk
 from tkinter import *
-root = Tk()
+
+root = tk.Tk()
 
 expression = ""
 
@@ -33,15 +35,17 @@ def clear():
 
 
 root.geometry('600x700')
+root.resizable(False,False)
+
 
 root.title('Calculator')
 
 equation = StringVar()
 
-text_field = Entry(root, textvariable=equation)
+text_field = Entry(root,width = 600,bg = '#fff',background = "light Blue",font = ('Times New Roman',55), textvariable=equation).place(x = 0,y = 100 )
 
-text_field.grid(columnspan=10, ipadx=250,ipady = 100)
-
+b20 = Button(root, text = "Calculator",background = "pink",pady=10,font=('Times New Roman',50, 'bold'))
+b20.place(width =400,height = 80,x = 100 , y = 10)
 
 
 b10 = Button(root, text = "C",activeforeground = "Blue",activebackground = "pink",command=clear,pady=10,font=('Times New Roman', 25, 'bold'))
